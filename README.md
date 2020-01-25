@@ -14,7 +14,11 @@
 This project was written in Python 3.7, using a Jupyter Notebook on Anaconda. 
 The relevant Python packages for this project are as follows:
 
+- pandas
 - numpy
+- nltk
+- beautifulsoup4
+- html5lib
 
 ## Directory Structure <a name="directoryStructure"></a>
 
