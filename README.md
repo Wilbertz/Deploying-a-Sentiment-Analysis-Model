@@ -11,7 +11,8 @@
 7. [Results](#results)
 
 ## Installation <a name="installation"></a>
-This project was written in Python 3.7, using a Jupyter Notebook on Anaconda. The relevant Python packages for this project are as follows:
+This project was written in Python 3.7, using a Jupyter Notebook on Anaconda. 
+The relevant Python packages for this project are as follows:
 
 - numpy
 
@@ -22,6 +23,14 @@ This project was written in Python 3.7, using a Jupyter Notebook on Anaconda. Th
     - README.md  (This readme file)
     
  # Project Motivation <a name="motivation" />
+
+
+The notebook and Python files provided here, once completed, result in a simple web app which interacts
+with a deployed recurrent neural network performing sentiment analysis on movie reviews. 
+This project assumes some familiarity with SageMaker, the mini-project, Sentiment Analysis using XGBoost, 
+should provide enough background.
+
+Please see the [README](https://github.com/udacity/sagemaker-deployment/tree/master/README.md) in the root directory for instructions on setting up a SageMaker notebook and downloading the project files (as well as the other notebooks).
 
 ## Data Exploration <a name="exploration" />
 
