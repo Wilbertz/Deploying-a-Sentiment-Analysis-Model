@@ -25,6 +25,19 @@ The relevant Python packages for this project are as follows:
 - Root /
 
     - README.md  (This readme file)
+    - SageMakerProject.ipynb
+    - WebAppDiagram.svg
+    - serve
+        - model.py
+        - predict.py
+        - requirements.txt
+        - utils.py
+    - train
+        - model.py
+        - requirements.txt
+        - train.py
+    - website
+        - index.html
     
  # Project Motivation <a name="motivation" />
 
