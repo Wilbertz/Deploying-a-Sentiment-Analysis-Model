@@ -19,6 +19,8 @@ The relevant Python packages for this project are as follows:
 - nltk
 - beautifulsoup4
 - html5lib
+- torch
+- sagemaker_containers
 
 ## Directory Structure <a name="directoryStructure"></a>
 
