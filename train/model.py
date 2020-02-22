@@ -5,7 +5,6 @@ class LSTMClassifier(nn.Module):
     """
     This is the simple RNN model we will be using to perform Sentiment Analysis.
     """
-
     def __init__(self, embedding_dim, hidden_dim, vocab_size):
         """
         Initialize the model by setting up the various layers.
