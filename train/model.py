@@ -1,13 +1,13 @@
 import torch.nn as nn
 
-
 class LSTMClassifier(nn.Module):
     """
     This is the simple RNN model we will be using to perform Sentiment Analysis.
     """
+
     def __init__(self, embedding_dim, hidden_dim, vocab_size):
         """
-        Initialize the model by setting up the various layers.
+        Initialize the model by settingg up the various layers.
         """
         super(LSTMClassifier, self).__init__()
 
@@ -23,8 +23,8 @@ class LSTMClassifier(nn.Module):
         Perform a forward pass of our model on some input.
         """
         x = x.t()
-        lengths = x[0, :]
-        reviews = x[1: ,:]
+        lengths = x[0,:]
+        reviews = x[1:,:]
         embeds = self.embedding(reviews)
         lstm_out, _ = self.lstm(embeds)
         out = self.dense(lstm_out)
