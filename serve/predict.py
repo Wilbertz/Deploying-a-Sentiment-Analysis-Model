@@ -15,7 +15,6 @@ from model import LSTMClassifier
 
 from utils import review_to_words, convert_and_pad
 
-
 def model_fn(model_dir):
     """Load the PyTorch model from the `model_dir` directory."""
     print("Loading model.")
@@ -47,7 +46,6 @@ def model_fn(model_dir):
     print("Done loading model.")
     return model
 
-
 def input_fn(serialized_input_data, content_type):
     print('Deserializing the input data.')
     if content_type == 'text/plain':
@@ -55,11 +53,9 @@ def input_fn(serialized_input_data, content_type):
         return data
     raise Exception('Requested unsupported ContentType in content_type: ' + content_type)
 
-
 def output_fn(prediction_output, accept):
     print('Serializing the generated output.')
     return str(prediction_output)
-
 
 def predict_fn(input_data, model):
     print('Inferring sentiment of input data.')
@@ -89,10 +85,9 @@ def predict_fn(input_data, model):
 
     # TODO: Compute the result of applying the model to the input data. The variable `result` should
     #       be a numpy array which contains a single integer which is either 1 or 0
-
     with torch.no_grad():
         output = model.forward(data)
-
-    result = np.round(output.numpy())
-
+    
+    result = output.detach().cpu().clone().numpy().round().astype(int)
+    
     return result
