@@ -13916,7 +13916,9 @@ The data look reasonable, the length of the review is 500 as expected, only the 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Using the same methods for processing both training and testing set is generally a good idea. But there are some problems with words that appear only in the training set and are missing in the testing set. These words will not appear in the word_dict. Therefore the training set has to be large enough to minimize this effect.</p>
+<p>Using the same methods for processing both training and testing set is generally a good idea.</p>
+<p>But there are some problems with words that appear only in the training set and are missing in the testing set. These words will appear in the word_dict with a value of 1 (INFREQ). Therefore the training set has to be large enough to minimize this effect.</p>
+<p>Very long reviews are truncated to 500 words. Very long reviews should be rare in both the training and the testing set. There is also padding to 500 words, but I suppose there are no problems related to padding.</p>
 
 </div>
 </div>
@@ -14570,8 +14572,10 @@ Billable seconds: 271
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>The tunes XGBoost model performs slightly better. This is probably due to intensive hyperparameter tuning. I would expect that
-an RNN is better for sentiment analysis, since it can utilize information about the ordering of words within a sequence. But we did no hyperparameter tuning for the RNN model. In additon the training for the RNN model stopped after 10 epochs, perhaps learning for more epochs would improve the model.</p>
+<p>The tuned XGBoost model performs slightly better.</p>
+<p>This is probably due to intensive hyperparameter tuning. I would expect that
+an RNN is better for sentiment analysis, since it can utilize information about the ordering of words within a sequence. But XGBoost models did win a surprising large number of Kaggle competitions and should never be underestimated.</p>
+<p>But we did no hyperparameter tuning for the RNN model. In addition the training for the RNN model stopped after 10 epochs, perhaps learning for more epochs would improve the model. Currently the RNN uses just a single hidden layer. I expect a more advanced network architecture with multiple hidden layers to perform better.</p>
 
 </div>
 </div>
