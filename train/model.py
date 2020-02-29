@@ -1,5 +1,6 @@
 import torch.nn as nn
 
+
 class LSTMClassifier(nn.Module):
     """
     This is the simple RNN model we will be using to perform Sentiment Analysis.
